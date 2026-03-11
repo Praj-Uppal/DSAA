@@ -19,4 +19,14 @@ public:
         newStr.pop_back();
         return (str[str.length() - 1] + reverseString(newStr));
     }
+
+    int reverseDigit(int value)
+    {
+
+        string valueString = to_string(value);
+
+        string reversed = reverseString(valueString);
+
+        return stoi(reversed);
+    }
 };
