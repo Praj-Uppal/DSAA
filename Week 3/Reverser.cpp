@@ -22,11 +22,19 @@ public:
 
     int reverseDigit(int value)
     {
+        return reverseNumber(value, 0);
+    }
 
-        string valueString = to_string(value);
+    int reverseNumber(int value, int accumulator)
+    {
+        if (value == 0)
+        {
+            return accumulator;
+        }
+        int newDigit = value % 10;
+        int newAccumulator = accumulator * 10 + newDigit;
+        int newValue = value / 10;
 
-        string reversed = reverseString(valueString);
-
-        return stoi(reversed);
+        return reverseNumber(newValue, newAccumulator);
     }
 };
