@@ -140,5 +140,33 @@ void LinkedList::printList()
 
     while (currentNode->getLink() != nullptr)
     {
-        }
+    }
+}
+
+void LinkedList::reverseList()
+{
+
+    Node *lastNode = nullptr;
+    Node *currentNode = head->getLink();
+    Node *nextNode = currentNode->getLink();
+
+    while (nextNode != nullptr)
+    {
+        currentNode->setLink(lastNode);
+        lastNode = currentNode;
+        currentNode = nextNode;
+        nextNode = currentNode->getLink();
+    }
+
+    head = currentNode;
+    currentNode->setLink(lastNode);
+}
+
+void LinkedList::lazyDelete(Node *toDelete)
+{
+    toDelete->setStatus(NULL);
+    if (nullCount < nodeCount)
+    {
+        return;
+    }
 }

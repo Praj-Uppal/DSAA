@@ -9,6 +9,7 @@ class Node
 private:
     int data;
     Node *link;
+    bool status;
 
 public:
     Node(int data, Node *link) : data(data), link(link) {};
@@ -16,6 +17,8 @@ public:
     void setData(int data) { this->data = data; }
     Node *getLink() { return link; }
     void setLink(Node *link) { this->link = link; }
+    bool getStatus() { return status; }
+    void setStatus(bool state) { status = state; }
 };
 
 #endif
