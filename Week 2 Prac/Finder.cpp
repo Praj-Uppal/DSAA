@@ -2,6 +2,7 @@
 using namespace std;
 vector<int> Finder::findSubstrings(string s1, string s2) {
   vector<int> result;
+  result.reserve(s2.size());
   string toCheck;
   toCheck.reserve(s2.length());
   size_t found = 0;
@@ -11,7 +12,9 @@ vector<int> Finder::findSubstrings(string s1, string s2) {
     if (found != string::npos) {
       result.push_back(found);
     } else {
-      result.resize(s2.size(), -1);
+      for (size_t j = i; j < s2.size(); j++) {
+        result.push_back(-1);
+      }
       break;
     }
   }

@@ -6,9 +6,11 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 class Sort {
  public:
-  virtual std::vector<int> sort(std::vector<int> list) = 0;
+  virtual vector<int> sort(vector<int> list);
 };
 
 #endif
